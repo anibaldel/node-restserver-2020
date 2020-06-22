@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const app = express()
 var bodyParser = require('body-parser');
 
+const path = require('path');
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -13,6 +15,10 @@ app.use(bodyParser.json())
 
 //Configurarion local de rutas
 app.use(require('./routes/index'));
+
+// habilitar la carpeta pulic
+app.use(express.static(path.resolve(__dirname, '../public')));
+console.log(path.resolve(__dirname, '../public'));
 
 
 
@@ -23,5 +29,5 @@ mongoose.connect(process.env.URLDB, (err, res) => {
 })
 
 app.listen(process.env.PORT, () => {
-    console.log('Escuchando el puerto ', 30000);
+    console.log('Escuchando el puerto ', 3000);
 });
