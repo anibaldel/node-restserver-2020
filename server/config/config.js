@@ -16,7 +16,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //====================
 // Vencimiento del Token
 //====================
-process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+process.env.CADUCIDAD_TOKEN = '48h';
 
 //====================
 // SEED de autenticacion
@@ -29,7 +29,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
-    urlDB = 'mongodb+srv://anibaldel:v2sUuZxwPvmA9RZA@cluster0-jli1c.mongodb.net/cafe';
+    urlDB = 'mongodb+srv://anibaldel:31EnKL3kc8POqOzF@cluster0-mmm8z.mongodb.net/cafe';
 }
 
 process.env.URLDB = urlDB;
